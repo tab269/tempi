@@ -10,6 +10,7 @@
 # * insert (cached) data into (remote) database
 # * make SAMPLE_DELAY_SECONDS a cmd-line parameter
 # * exit, when dependencies are not met (e.g. 'bc')
+# * write in CSV format
 
 
 SAMPLE_DELAY_SECONDS=3
