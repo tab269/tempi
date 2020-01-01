@@ -17,6 +17,7 @@ PATH_PREFIX="/sys/bus/w1/devices"
 PATH_POSTFIX="w1_slave"
 OUT_PATH="/home/pi/tempi/data"
 OUT_FILE=$(date --utc +%Y-%m-%d%z).csv
+SEPARATOR=","
 
 declare -A SENSORS
 SENSORS[0]=28-011453d9f5aa
@@ -38,6 +39,6 @@ for SENSOR in "${SENSORS[@]}"; do
 	TEMP_BINARY="$(cat $PATH_PREFIX/$SENSOR/$PATH_POSTFIX)"
 	TIMESTAMP=$(date --utc +%Y-%m-%dT%H:%M:%SZ)
 	TEMP_HUMAN=$(echo "scale=1; "$(echo ${TEMP_BINARY##*=})" / 1000" | bc)
-	echo "$SENSOR;$TIMESTAMP;$TEMP_HUMAN" >> $OUT_PATH/$OUT_FILE
+	echo "$SENSOR$SEPARATOR$TIMESTAMP$SEPARATOR$TEMP_HUMAN" >> $OUT_PATH/$OUT_FILE
 done;
 
