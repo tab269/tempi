@@ -36,7 +36,7 @@ if [ ! -e $OUT_PATH/$OUT_FILE ]; then
 fi
 for SENSOR in "${SENSORS[@]}"; do
 	TEMP_BINARY="$(cat $PATH_PREFIX/$SENSOR/$PATH_POSTFIX)"
-	TIMESTAMP=$(date --utc +%Y-%m-%d_%H-%M-%S.%N%z)
+	TIMESTAMP=$(date --utc +%Y-%m-%dT%H:%M:%SZ)
 	TEMP_HUMAN=$(echo "scale=1; "$(echo ${TEMP_BINARY##*=})" / 1000" | bc)
 	echo "$SENSOR;$TIMESTAMP;$TEMP_HUMAN" >> $OUT_PATH/$OUT_FILE
 done;
