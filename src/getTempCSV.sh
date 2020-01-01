@@ -16,7 +16,7 @@
 PATH_PREFIX="/sys/bus/w1/devices"
 PATH_POSTFIX="w1_slave"
 OUT_PATH="/home/pi/tempi/data"
-OUT_FILE=$(date --utc +%Y-%m-%d%z)
+OUT_FILE=$(date --utc +%Y-%m-%d%z).csv
 
 declare -A SENSORS
 SENSORS[0]=28-011453d9f5aa
