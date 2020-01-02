@@ -33,7 +33,7 @@ if [ ! -d $OUT_PATH ]; then
 	exit 1
 fi
 if [ ! -e $OUT_PATH/$OUT_FILE ]; then
-	echo "sensor_id;timestamp;temperatur_celsius" > $OUT_PATH/$OUT_FILE
+	echo "sensor_id;timestamp;temperature_celsius" > $OUT_PATH/$OUT_FILE
 fi
 for SENSOR in "${SENSORS[@]}"; do
 	TEMP_BINARY="$(cat $PATH_PREFIX/$SENSOR/$PATH_POSTFIX)"
