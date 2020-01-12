@@ -44,7 +44,7 @@ new Chart(ctx, {
     options: {
         scales: {
             xAxes: [{
-                type: 'linear',
+                type: 'time',
                 position: 'bottom'
             }]
         }
