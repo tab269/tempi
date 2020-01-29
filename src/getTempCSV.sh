@@ -5,7 +5,7 @@
 # * implement error cases
 # * * wrong cmd-line usage
 # * * unknown sensor ID
-# * * CRC not OK
+# * * CRC not OK, see https://www.kompf.de/weather/pionewiremini.html
 # * write to (file) cache
 # * insert (cached) data into (remote) database
 # * make SAMPLE_DELAY_SECONDS a cmd-line parameter
